@@ -1,21 +1,31 @@
 package com.my.practice.algo1;
 
+import java.util.Scanner;
 
 /*
 	쉬운거부터 시작
+	공배수 구하기
 */
 public class Prac1 {
 
-	public int p1(int a, int b) {
-		int result = 0;
-		result = a+b;
-		return result;
+	Scanner sc = new Scanner(System.in);
+	
+	public void p1() {
+		System.out.println("입력:");
+		int a = sc.nextInt();
+		System.out.println("입력:");
+		int b = sc.nextInt();
+		
+		for (int i = 1; i <= a && i <= b; i++) {
+			if((a%i) == 0 && (b%i) == 0) {
+				System.out.print(i + " ");
+			}
+			
+		}
 	}
 	
+	
 	public static void main(String[] args) {
-		System.out.println(new Prac1().p1(1, 3));
-		System.out.println();
-		System.out.println();
-		System.out.println();
+		new Prac1().p1();
 	}
 }
