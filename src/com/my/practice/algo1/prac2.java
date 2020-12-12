@@ -1,37 +1,32 @@
 package com.my.practice.algo1;
 
-import java.util.Scanner;
+public class prac2{
 
-public class prac2 {
-	
-	Scanner sc = new Scanner(System.in);
-	
-	public static void main(String[] args) {
-		new prac2().view();
-	}
-	
-	public void view() {
-		
-		System.out.println("____________저 녁 고 르 기___________");
-		System.out.println("1. 집밥");
-		System.out.println("2. 치킨");
-		System.out.println("3. 일식");
-		System.out.println("4. 중식");
-		System.out.println("고르기 ㄱㄱ? (예: 1, 아니오: 2)");
-		int select = sc.nextInt();
-		
-		if(select == 1) {
-			int result = 0;
-			result = (int)(Math.random()*4)+1;
-			
-			switch(result) {
-			case 1: System.out.println("집밥!"); break;
-			case 2: System.out.println("치킨!"); break;
-			case 3: System.out.println("일식!"); break;
-			case 4: System.out.println("중식!"); break;
-			default: System.out.println("다시~"); break;
-			}
-		}
-	}
-	// 할게 너무 많ㄴ다아ㅏ아ㅏ
+    public int solution(int[] arr, int num){
+    	int day = 1;
+    	int temp = 0;
+    	int temp2 = 0;
+    	int result = 0;
+    	
+    	for (int i = 0; i < arr.length; i++) {
+    		if(temp2 > 0) {
+    			arr[i] = arr[i]+temp2;
+    		}
+    		temp = 0;
+			temp2 = 0;
+			day = 1;
+    		if(arr[i] == 0) {
+    			continue;
+    		} else if(arr[i] > num) {
+    			temp = arr[i]/num;
+    			day = day*temp;
+    			temp2 = arr[i] - num*temp; 
+    			result = result + day;
+    		} else {
+    			
+    			result++;
+    		}
+    	}
+    	return result;
+    }
 }
