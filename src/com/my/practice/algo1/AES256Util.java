@@ -35,9 +35,9 @@ public class AES256Util {
 	
 	public String encrypt(String str) throws NoSuchAlgorithmException, NoSuchPaddingException {
 		Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding");
-		c.init(Cipher.ENCRYPT_MODE, keySpec, new IvParameterSpec(iv.getBytes()));
+//		c.init(Cipher.ENCRYPT_MODE, keySpec, new IvParameterSpec(iv.getBytes()));
 		
-		byte[] encrypted = c.doFinal(str.getBytes("UTF-8"));
+//		byte[] encrypted = c.doFinal(str.getBytes("UTF-8"));
 //		String enStr = new String(Base64.encodeBase64(encrypted));
 		
 		return "";
