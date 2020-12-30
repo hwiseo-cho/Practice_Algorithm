@@ -36,4 +36,16 @@ public class Phone_book {
         }
         return result;
     }
+    
+    public boolean solution3(String[] phoneBook) {
+    	for(int j=1; j<phoneBook.length; j++) {
+            if(phoneBook[0].startsWith(phoneBook[j])) {
+                return false;
+            }
+            if(phoneBook[j].startsWith(phoneBook[0])) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
