@@ -13,7 +13,7 @@ public class Prac3 {
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("숫자입력: ");
+		System.out.println("숫자입력: "); 
 		int n = sc.nextInt();
 		int result = new Prac3().solution(n);
 		if(result == -1) {
