@@ -12,21 +12,37 @@ import java.util.*;
 public class practice10 {
 	
 	public static void main(String[] args) {
-		int[][] arr1 = {{1,2},{2,3}};
-		int[][] arr2 = {{3,4},{5,6}};
-		System.out.println(solution(arr1,arr2));
+		String s = "cdcd";
+		System.out.println(solution(s));
 	}
 	
 	
-	 public static int[][] solution(int[][] arr1, int[][] arr2) {
-	        int[][] result = new int[arr1.length][arr1[0].length];
-	        for(int i=0; i<arr1.length; i++) {
-	        	for(int k=0; k<arr1[i].length; k++) {
-	        		result[i][k] = arr1[i][k] + arr2[i][k];
-	        	}
+	 public static int solution(String s) {
+		 String str = "";
+	        char[] arr = s.toCharArray();
+	        for(int i=0; i<arr.length; i++) {
+	        	int count = 0;
+	            if(i != 0) {
+	                if(arr[i-1] == arr[i]) {
+	                    str += arr[i-1];
+	                    count++;
+	                } else if(count > 0 && arr[i-1] != arr[i]) {
+	                	s.replace(str, "");
+	                	i = 0;
+	                }
+	            } 
 	        }
-	        return result;
-	    }
+	        String k = "";
+	        for(int t=0; t<arr.length; t++) {
+	        	k += arr[t];
+	        }
+	        k.replaceAll(" ","");
+	        if(k.equals("")) {
+	        	return 0;
+	        } else {
+	        	return 1;
+	        }
+	 }
 	
 	
 	// 내꺼
