@@ -18,7 +18,7 @@ public class practice10 {
 	
 	
 	 public static int solution(String s) {
-		 String str = "";
+		 	String str = "";
 	        char[] arr = s.toCharArray();
 	        for(int i=0; i<arr.length; i++) {
 	        	int count = 0;
@@ -30,14 +30,14 @@ public class practice10 {
 	                	s.replace(str, "");
 	                	i = 0;
 	                }
-	            } 
+	            }   
 	        }
 	        String k = "";
 	        for(int t=0; t<arr.length; t++) {
 	        	k += arr[t];
 	        }
-	        k.replaceAll(" ","");
-	        if(k.equals("")) {
+	        System.out.println(str);
+	        if(k.equals(s)) {
 	        	return 0;
 	        } else {
 	        	return 1;
