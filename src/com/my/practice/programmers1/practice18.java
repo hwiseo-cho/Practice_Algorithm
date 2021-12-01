@@ -23,6 +23,22 @@ public class practice18 {
 	public static int solution(int[] people, int limit) {
 		int answer = 0;
 		Arrays.sort(people);
+		int min = 0;
+		
+		for(int max=people.length-1; min<= max; max--) {
+			if(people[min] + people[max] <= limit) {
+				min++;
+			}
+			answer++;
+		}
+        return answer;
+    }
+	
+	
+	// 내꺼
+	public static int mySolution(int[] people, int limit) {
+		int answer = 0;
+		Arrays.sort(people);
 		for(int i=0; i<people.length; i++) {
 			if(people[i] == 0) {
 				continue;
@@ -47,13 +63,6 @@ public class practice18 {
 			}
 		}
 		
-        return answer;
-    }
-	
-	
-	// 내꺼
-	public static int mySolution(int[] people, int limit) {
-		int answer = 0;
         return answer;
 	}
 		
