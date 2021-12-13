@@ -23,7 +23,7 @@ public class practice20 {
         int idx=0;
         Queue<Integer> queue = new LinkedList<>();           
         
-        while(true){
+        while(true){  
             if(idx == truck_weights.length) {
             	break;
             }
