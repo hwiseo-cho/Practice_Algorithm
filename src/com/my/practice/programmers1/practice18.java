@@ -14,7 +14,7 @@ import java.util.*;
 public class practice18 {
 	
 	public static void main(String[] args) {
-		int[] people = {70,80,50};
+		int[] people = {70,80,50}; 
 		int limit    = 100;
 		System.out.println(solution(people,limit));
 	}
