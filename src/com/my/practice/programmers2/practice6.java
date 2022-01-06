@@ -19,7 +19,7 @@ public class practice6 {
 	public static void main(String[] args) {
 		String[] strings = {"sun", "bed", "car"};
 		int n = 1;
-		System.out.println(solution(strings,n));
+		System.out.println(solution(strings,n)); 
 	}
 	
 	
