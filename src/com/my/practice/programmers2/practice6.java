@@ -20,7 +20,7 @@ public class practice6 {
 		String[] strings = {"sun", "bed", "car"};
 		int n = 1;
 		System.out.println(solution(strings,n)); 
-	}
+	} 
 	
 	
 	public static String[] solution(String[] strings,int n) {
