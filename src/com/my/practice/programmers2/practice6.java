@@ -32,7 +32,7 @@ public class practice6 {
 		}
 	
         return answer;
-    }
+    } 
     
  
 	// 내꺼
