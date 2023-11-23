@@ -5,7 +5,7 @@ package com.my.practice.algo1;
  *	소수를 15개 까지 저장하는 알고리즘을 작성하라.
  */
 public class Prac9 {
-
+  
 	public static void main(String[] args) {
 //		별찍기 
 //		for (int i = 1; i < 4; i++) {
@@ -18,7 +18,7 @@ public class Prac9 {
 //			}
 //			System.out.println("");
 //		}
-		
+		 
 //		소수 구하기
 //		int i = 2;
 //		Boolean result = true;
