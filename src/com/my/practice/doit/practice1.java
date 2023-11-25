@@ -1,4 +1,4 @@
-package com.my.practice.programmers2;
+package com.my.practice.doit;
 
 import java.util.*;
 
