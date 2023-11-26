@@ -44,7 +44,7 @@ public class practice2 {
 		
 		System.out.println(result);
 	}
-	
+	 
 	public static void solution002() {
 		Scanner sc = new Scanner(System.in);
 		
