@@ -1,5 +1,8 @@
 package com.my.practice.doit;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 
 /*
@@ -19,14 +22,17 @@ import java.util.*;
  *	001. N개의 숫자가 공백 없이 써 있다. 이 숫자를 모두 합해 출력하는 프로그램을 작성하시오.
  *
  *	002. N개의 과목의 개수에 각 점수를 점수/최대값M * 100	형태로 점수를 내어 평균을 구하라 
+ *
+ *	003. 수 N개가 주어졌을 때 i번째 수에서 J번째 수까지의 합을 구하는 프로그램을 작성하시오.
  */
 public class practice2 {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		//solution001();
-		solution002();
+		//solution002();
+		solution003();
 	}
-	
+	/* 숫자의 합 구하기 */
 	public static void solution001() {
 		Scanner sc = new Scanner(System.in);
 		
@@ -44,7 +50,8 @@ public class practice2 {
 		
 		System.out.println(result);
 	}
-	 
+	
+	/* 평균 구하기 */
 	public static void solution002() {
 		Scanner sc = new Scanner(System.in);
 		
@@ -71,4 +78,30 @@ public class practice2 {
 		System.out.println(sum * 100.0 / max / n);
 	}
 	
+	/* 구간 합 구하기 1 */
+	public static void solution003() throws Exception {
+		// 합 배열 공식 S[i] = S[i-1] + A[i]
+		// 구간 합 공식 S[j] - S[i-1]
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+		
+		StringTokenizer stz = new StringTokenizer(bufferedReader.readLine());
+		
+		int suNo = Integer.parseInt(stz.nextToken());
+		int quizNo = Integer.parseInt(stz.nextToken());
+		long[] arr = new long[suNo+1];
+		
+		for(int k=0; k<=suNo; k++) {
+			arr[k] = arr[k-1] + Integer.parseInt(stz.nextToken());
+		}
+		
+		for(int t=0; t < quizNo; t++) {
+			stz = new StringTokenizer(bufferedReader.readLine());
+			
+			int i = Integer.parseInt(stz.nextToken());
+			int j = Integer.parseInt(stz.nextToken());
+			
+			System.out.println(arr[j] - arr[i-1]);
+		}
+		
+	}
 }
