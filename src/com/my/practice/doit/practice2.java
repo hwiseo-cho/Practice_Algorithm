@@ -24,13 +24,16 @@ import java.util.*;
  *	002. N개의 과목의 개수에 각 점수를 점수/최대값M * 100	형태로 점수를 내어 평균을 구하라 
  *
  *	003. 수 N개가 주어졌을 때 i번째 수에서 J번째 수까지의 합을 구하는 프로그램을 작성하시오.
+ *
+ *	004. N*N 크기의 표에서 (x1,y1) 에서 (x2,y2)까지의 합을 구하시오.
  */
 public class practice2 {
 	
 	public static void main(String[] args) throws Exception {
 		//solution001();
 		//solution002();
-		solution003();
+		//solution003();
+		solution004();
 	}
 	/* 숫자의 합 구하기 */
 	public static void solution001() {
@@ -83,7 +86,6 @@ public class practice2 {
 		// 합 배열 공식 S[i] = S[i-1] + A[i]
 		// 구간 합 공식 S[j] - S[i-1]
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-		
 		StringTokenizer stz = new StringTokenizer(bufferedReader.readLine());
 		
 		int suNo = Integer.parseInt(stz.nextToken());
@@ -102,6 +104,46 @@ public class practice2 {
 			
 			System.out.println(arr[j] - arr[i-1]);
 		}
+	}
+	
+	/* 구간 합 구하기 2 */
+	public static void solution004() throws IOException {
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer stz = new StringTokenizer(bufferedReader.readLine());
 		
+		int N = Integer.parseInt(stz.nextToken());
+		int M = Integer.parseInt(stz.nextToken());
+		
+		// 기본 배열
+		int[][] A = new int[N+1][N+1];
+		
+		for(int i=0; i<=N; i++) {
+			stz = new StringTokenizer(bufferedReader.readLine());
+			for(int j=0; j<=N; j++) {
+				A[i][j] = Integer.parseInt(stz.nextToken());
+			}
+		}
+		
+		// 합 배열
+		int[][] D = new int[N+1][N+1];
+		
+		for(int i=1; i<=N; i++) {
+			for(int j=1; j<=N; j++) {
+				D[i][j] = D[i][j-1] + D[i-1][j] - D[i-1][j-1] + A[i][j];
+			}
+		}
+		
+		for(int i=0; i<M; i++) {
+			stz = new StringTokenizer(bufferedReader.readLine());
+			
+			int x1 = Integer.parseInt(stz.nextToken());
+			int y1 = Integer.parseInt(stz.nextToken());
+			int x2 = Integer.parseInt(stz.nextToken());
+			int y2 = Integer.parseInt(stz.nextToken());
+			
+			// 수학적으로 접근해야
+			int result = D[x2][y2] - D[x1][y2] - D[x2][y1-1] + D[x1-1][y1-1];
+			System.out.println(result);
+		}
 	}
 }
