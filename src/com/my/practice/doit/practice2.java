@@ -133,7 +133,7 @@ public class practice2 {
 			}
 		}
 		
-		for(int i=0; i<M; i++) {
+		for(int i=0; i<M; i++) { 
 			stz = new StringTokenizer(bufferedReader.readLine());
 			
 			int x1 = Integer.parseInt(stz.nextToken());
